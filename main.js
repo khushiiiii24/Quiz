@@ -14,7 +14,7 @@ btn.addEventListener("click", () => {
     btn.style.display = "none";
     //for pring the first que instantly
     timerDiv.innerHTML = timer;
-    timerDiv.style.cssText="background-color:black;color:white;width:30px;height:30px;border-radius:50%;display:flex;justify-content:center;align-items:center";
+    timerDiv.style.cssText = "background-color:black;color:white;width:30px;height:30px;border-radius:50%;display:flex;justify-content:center;align-items:center";
     displayQuestionAndOptions(queCount);
     // actualQuizSection.classList.add("bg-white","rounded-lg");
     // timerDiv.classList.add("bg-white","rounded-lg");
@@ -25,6 +25,10 @@ btn.addEventListener("click", () => {
                 timer = 5;
                 timerDiv.innerHTML = timer;
                 displayQuestionAndOptions(queCount);
+            }
+            else if (queCount === -1) {
+                console.log("khushi");
+                timerDiv.style.display = "none";
             }
             else {
                 clearInterval(interval);
@@ -72,7 +76,7 @@ function calculateScore() {
         if (answer === questions[index].a) score++;
     })
     console.log("Your score is: " + score);
-    
+
 
 }
 
